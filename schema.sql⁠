@@ -1,0 +1,30 @@
+-- Create Database
+CREATE DATABASE IF NOT EXISTS course_management_db;
+USE course_management_db;
+
+-- Students Table
+CREATE TABLE IF NOT EXISTS Students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    enrollment_date DATE DEFAULT (CURRENT_DATE)
+);
+
+-- Courses Table
+CREATE TABLE IF NOT EXISTS Courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_code VARCHAR(20) UNIQUE NOT NULL,
+    course_name VARCHAR(100) NOT NULL,
+    credits INT NOT NULL
+);
+
+-- Enrollments Table (Relational Mapping for Grades & Tracking)
+CREATE TABLE IF NOT EXISTS Enrollments (
+    enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    grade VARCHAR(2) DEFAULT 'N/A',
+    FOREIGN KEY (student_id) REFERENCES Students(student_id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id) ON DELETE CASCADE
+);

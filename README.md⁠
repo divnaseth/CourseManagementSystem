@@ -1,0 +1,16 @@
+# Course Management System
+
+A robust, database-driven console application built in **C++** and **MySQL** designed to streamline student registration, course tracking, grade record management, transcript viewing, and reporting.
+
+## Features
+* **Student Registration:** Add and manage student profiles.
+* **Course Tracking:** Create and list available academic courses.
+* **Enrollment & Grades:** Enroll students in courses and manage/record their grades.
+* **Transcript Viewer:** View a detailed breakdown of courses taken and grades earned by a specific student.
+* **Summary Reports:** Generate quick analytical overviews of total students, courses, and active enrollments.
+* **Relational Integrity:** Utilizes SQL foreign keys and structured queries to maintain data consistency.
+
+## Tech Stack
+* **Language:** C++ (Standard C++11 or higher)
+* **Database:** MySQL
+* **Libraries:** MySQL Connector/C++ (or MySQL C API)
